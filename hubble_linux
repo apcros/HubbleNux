@@ -1,0 +1,10 @@
+use strict;
+use warnings;
+use Hubble;
+
+my $hub = Hubble->new();
+
+while (1) {
+	$hub->get_cpu_percent();
+	sleep 1;
+}
