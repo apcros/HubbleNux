@@ -1,10 +1,12 @@
 use strict;
 use warnings;
-use Hubble;
 
-my $hub = Hubble->new();
+use Hubble::Stats::Generic;
+use Hubble::Api;
+
+my $generic_stats = Hubble::Stats::Generic->new();
 
 while (1) {
-	$hub->get_cpu_percent();
-	sleep 1;
+	print $generic_stats->get_cpu_percent()."\n";
+	#sleep 1;
 }
