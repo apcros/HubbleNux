@@ -19,4 +19,10 @@ sub get_cpu_percent {
 	return round($percent);
 }
 
+sub get_memory_stats {}
+
+sub get_drives_stats {}
+
+sub get_system_info {}
+
 1;

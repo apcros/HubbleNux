@@ -3,6 +3,7 @@ use warnings;
 
 use Hubble::Stats::Generic;
 use Hubble::Api;
+#TODO use GetOps
 
 my $generic_stats = Hubble::Stats::Generic->new();
 
