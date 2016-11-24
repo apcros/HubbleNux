@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-
 use Hubble::Engine;
 
 use Data::Dumper;
