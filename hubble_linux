@@ -2,10 +2,21 @@ use strict;
 use warnings;
 use Hubble::Engine;
 
-use Data::Dumper;
+use Getopt::Long::Descriptive;
 
-#TODO use GetOps
+my ($opt, $usage) = describe_options(
+    'hubble_linux %o',
+    ['period|p=s',"The refresh frequency (in seconds) (Default 2s)", {default => 2}],
+    ['uid|u=s',"The device UID as shown on Hubble web", {required => 1}],
+    ['secret|s=s',"The device secret key, as shown on Hubble web",{required => 1}],
+    ['endpoint|e=s',"The hubble api endpoint. Example : http://127.0.0.1/",{required => 1}]
+);
 
-my $engine = Hubble::Engine->new(wait_time => 1);
+my $engine = Hubble::Engine->new(
+    wait_time => $opt->period,
+    device_uid => $opt->uid,
+    device_secret_key => $opt->secret,
+    endpoint => $opt->endpoint
+);
 
 $engine->run();

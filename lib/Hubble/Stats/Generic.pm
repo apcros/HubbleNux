@@ -28,6 +28,9 @@ sub get_memory_stats {
 
 sub get_drives_stats {}
 
-sub get_system_info {}
+sub get_system_info {
+    my ($self) = @_;
+    return get_host_info()->fetchall_hashref->[0];
+}
 
 1;
